@@ -16,10 +16,9 @@ on:
 jobs:
   build-and-deploy-book:
     if: (github.event_name == 'schedule' && github.repository == 'napari/napari.github.io') || (github.event_name != 'schedule')
-    runs-on: ${{ matrix.os }}
+    runs-on: self-hosted
     strategy:
       matrix:
-        os: [ubuntu-latest]
         python-version: [3.8]
         node-version: [16]
     steps:
